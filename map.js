@@ -1,12 +1,3 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`❌❌❌Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-
 const eqArrays = function(array1, array2) {
   if (array1 === array2) return true;
   if (array1 === null || array2 === null) return false;
@@ -26,7 +17,21 @@ const assertArraysEqual = function(array1, array2) {
 };
 
 
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
-assertArraysEqual([1, 2, 3], [1, 2, "3"]);
-assertArraysEqual([1, 2, 3], [1, 2, 3, 4]);
-assertArraysEqual([1, 2, 3], []);
+
+const words = ["ground", "control", "to", "major", "tom"];
+
+const map = function(array, callback) {
+  const results = [];
+  for (let item of array) {
+    results.push(callback(item));
+  }
+  return results;
+};
+
+const results3 = map(words, word => `${word} is a song lyric`);
+const results2 = map(words, word => word.length);
+const results1 = map(words, word => word[0]);
+
+console.log(results3);
+
+// assertArraysEqual(words, results1);

@@ -28,10 +28,10 @@ const map = function(array, callback) {
   return results;
 };
 
-const results3 = map(words, word => `${word} is a song lyric`);
-const results2 = map(words, word => word.length);
+// const results3 = map(words, word => `${word} is a song lyric`);
+// const results2 = map(words, word => word.length);
 const results1 = map(words, word => word[0]);
 
-console.log(results3);
+console.log(results1);
 
-// assertArraysEqual(words, results1);
+assertArraysEqual(words, results1);
